@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Scheduler</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<body class="mdc-typography">
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <span class="mdc-top-app-bar__title">Train Scheduler</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <button class="mdc-button mdc-button--unelevated">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Home</span>
+                </button>
+                <button class="mdc-button mdc-button--unelevated">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Station Schedule</span>
+                </button>
+                <button class="mdc-button mdc-button--unelevated">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Conflict Analysis</span>
+                </button>
+            </section>
+        </div>
+    </header>
+
+    <div class="mdc-top-app-bar--fixed-adjust">
+        <div class="container mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="left-panel mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                    <div class="mdc-card" id="stationForm">
+                        <h2 class="mdc-typography--headline6">Add New Station</h2>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" id="stationName" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="stationName" class="mdc-floating-label">Station Name</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-select mdc-select--outlined">
+                            <div class="mdc-select__anchor">
+                                <span class="mdc-select__selected-text"></span>
+                                <span class="mdc-select__dropdown-icon">
+                                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+                                        <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                                        <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                                    </svg>
+                                </span>
+                                <span class="mdc-notched-outline">
+                                    <span class="mdc-notched-outline__leading"></span>
+                                    <span class="mdc-notched-outline__notch">
+                                        <span class="mdc-floating-label">Select a line</span>
+                                    </span>
+                                    <span class="mdc-notched-outline__trailing"></span>
+                                </span>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                <ul class="mdc-list" id="railwayLineSelect"></ul>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="number" id="kilometerPosition" class="mdc-text-field__input" step="0.001" min="0">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="kilometerPosition" class="mdc-floating-label">Kilometer position (e.g. 4.245)</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised" onclick="submitStation()">
+                            <span class="mdc-button__label">Add Station</span>
+                        </button>
+                    </div>
+
+                    <div class="mdc-card" id="scheduleForm">
+                        <h2 class="mdc-typography--headline6">Add New Schedule</h2>
+                        <div class="mdc-select mdc-select--outlined" id="trainCategorySelect" style="width: 100%; margin-bottom: 16px;">
+                            <div class="mdc-select__anchor">
+                                <span class="mdc-select__selected-text"></span>
+                                <span class="mdc-select__dropdown-icon">
+                                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+                                        <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                                        <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                                    </svg>
+                                </span>
+                                <span class="mdc-notched-outline">
+                                    <span class="mdc-notched-outline__leading"></span>
+                                    <span class="mdc-notched-outline__notch">
+                                        <span class="mdc-floating-label">Train Category</span>
+                                    </span>
+                                    <span class="mdc-notched-outline__trailing"></span>
+                                </span>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                <ul class="mdc-list" id="trainCategory">
+                                    <!-- Train categories will be dynamically added here -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" id="trainId" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="trainId" class="mdc-floating-label">Train ID</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div id="stops">
+                            <!-- Stops will be added here dynamically -->
+                        </div>
+                        <button class="mdc-button mdc-button--raised" onclick="addStop()">
+                            <span class="mdc-button__label">Add Stop</span>
+                        </button>
+                        <button class="mdc-button mdc-button--raised" onclick="submitSchedule()">
+                            <span class="mdc-button__label">Submit Schedule</span>
+                        </button>
+                    </div>
+
+                    <div class="mdc-card" id="replicationForm">
+                        <h2 class="mdc-typography--headline6">Replicate Schedule</h2>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" id="sourceId" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="sourceId" class="mdc-floating-label">Source Train ID</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" id="newId" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="newId" class="mdc-floating-label">New Train ID</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="number" id="timeShift" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="timeShift" class="mdc-floating-label">Time shift (minutes)</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised" onclick="replicateSchedule()">
+                            <span class="mdc-button__label">Replicate</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="right-panel mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                    <div class="mdc-card">
+                        <h2 class="mdc-typography--headline6">Existing Schedules</h2>
+                        <div id="scheduleList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <script>
+        // Initialize Material Design Components
+        mdc.autoInit();
+    </script>
+</body>
+</html>

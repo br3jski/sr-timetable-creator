@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    padding: 16px;
+}
+
+.mdc-card {
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.mdc-text-field, .mdc-select {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.mdc-button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#stops {
+    margin-bottom: 16px;
+}
+
+#scheduleList {
+    max-height: 600px;
+    overflow-y: auto;
+}

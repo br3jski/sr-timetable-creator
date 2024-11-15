@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Conflict Analysis</h1>
+    <button onclick="analyzeConflicts()">Analyze Conflicts</button>
+    <div id="conflictResults"></div>
+    <div class="legend">
+        <h3>Legend:</h3>
+        <p><span class="legend-color critical-conflict"></span> Critical Conflict: Trains overlap on the same section</p>
+        <p><span class="legend-color potential-conflict"></span> Potential Conflict: Trains are within 2 minutes of each other</p>
+        <p><span class="legend-color close-encounter"></span> Close Encounter: Trains are within 4 minutes of each other</p>
+    </div>
+    <script src="/static/conflict_analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+{
+  "stations": [
+    {
+      "name": "Katowice",
+      "type": "pax"
+    },
+    {
+      "name": "Katowice Zawodzie",
+      "type": "pax"
+    },
+    {
+      "name": "Sosnowiec G\u0142\u00f3wny",
+      "type": "pax"
+    },
+    {
+      "name": "Sosnowiec Po\u0142udniowy",
+      "type": "pax"
+    },
+    {
+      "name": "Sosnowiec Da\u0144d\u00f3wka",
+      "type": "pax"
+    },
+    {
+      "name": "Juliusz",
+      "type": "pax"
+    },
+    {
+      "name": "Sosnowiec Por\u0105bka",
+      "type": "pax"
+    },
+    {
+      "name": "Sosnowiec Kazimierz",
+      "type": "pax"
+    },
+    {
+      "name": "B\u0119dzin",
+      "type": "pax"
+    },
+    {
+      "name": "B\u0119dzin Miasto",
+      "type": "pax"
+    },
+    {
+      "name": "B\u0119dzin Ksawera",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Go\u0142on\u00f3g",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Pogoria",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Z\u0105bkowice DZB",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Z\u0105bkowice DZA",
+      "type": "std"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Sikorka",
+      "type": "pax"
+    },
+    {
+      "name": "Wiesi\u00f3\u0142ka",
+      "type": "pax"
+    },
+    {
+      "name": "\u0141azy \u0141c",
+      "type": "std"
+    },
+    {
+      "name": "\u0141azy \u0141b",
+      "type": "pax"
+    },
+    {
+      "name": "\u0141azy \u0141a",
+      "type": "std"
+    },
+    {
+      "name": "Zawiercie",
+      "type": "pax"
+    },
+    {
+      "name": "Zawiercie Borowe Pole",
+      "type": "pax"
+    },
+    {
+      "name": "Myszk\u00f3w Mrzyg\u0142\u00f3d",
+      "type": "pax"
+    },
+    {
+      "name": "G\u00f3ra W\u0142odowska",
+      "type": "std"
+    },
+    {
+      "name": "Psary",
+      "type": "std"
+    },
+    {
+      "name": "Starzyny",
+      "type": "std"
+    },
+    {
+      "name": "Knap\u00f3wka",
+      "type": "dst"
+    },
+    {
+      "name": "W\u0142oszczowa P\u00f3\u0142noc",
+      "type": "pax"
+    },
+    {
+      "name": "Olszamowice",
+      "type": "std"
+    },
+    {
+      "name": "Pilichowice",
+      "type": "dst"
+    },
+    {
+      "name": "Opoczno Po\u0142udnie",
+      "type": "pax"
+    },
+    {
+      "name": "Idzikowice",
+      "type": "std"
+    },
+    {
+      "name": "Strza\u0142ki",
+      "type": "std"
+    },
+    {
+      "name": "Bia\u0142a Rawska",
+      "type": "dst"
+    },
+    {
+      "name": "Szeligi",
+      "type": "std"
+    },
+    {
+      "name": "Koryt\u00f3w",
+      "type": "std"
+    },
+    {
+      "name": "Grodzisk Mazowiecki",
+      "type": "pax"
+    },
+    {
+      "name": "Milan\u00f3wek",
+      "type": "pax"
+    },
+    {
+      "name": "Brwin\u00f3w",
+      "type": "pax"
+    },
+    {
+      "name": "Parzniew",
+      "type": "pax"
+    },
+    {
+      "name": "Pruszk\u00f3w",
+      "type": "pax"
+    },
+    {
+      "name": "Piast\u00f3w",
+      "type": "pax"
+    },
+    {
+      "name": "J\u00f3zefin\u00f3w",
+      "type": "dst"
+    },
+    {
+      "name": "Warszawa Ursus Nied\u017awiadek",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Ursus",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Wlochy",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Zachodnia",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Centralna",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Wschodnia",
+      "type": "pax"
+    },
+    {
+      "name": "Warszawa Groch\u00f3w",
+      "type": "std"
+    },
+    {
+      "name": "Sosnowiec G\u0142\u00f3wny pzs R52",
+      "type": "dst"
+    },
+    {
+      "name": "Chruszczobr\u00f3d",
+      "type": "pax"
+    },
+    {
+      "name": "Katowice Szopienice Po\u0142udniowe",
+      "type": "pax"
+    },
+    {
+      "name": "Sosowiec Kazimierz PZS SKZ2 pzs",
+      "type": "dst"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Strzemieszyce",
+      "type": "pax"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Wschodnia",
+      "type": "pax"
+    },
+    {
+      "name": "Kozio\u0142",
+      "type": "dst"
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Towardowa DTA R5",
+      "type": "dst"
+    },
+    {
+      "name": "Przemiarki",
+      "type": "dst"
+    },
+    {
+      "name": "Warszawa G\u0142\u00f3wna Towarowa",
+      "type": "std"
+    },
+    {
+      "name": "Dorota",
+      "type": "std"
+    }
+  ]
+}

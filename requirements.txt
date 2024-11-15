@@ -1,0 +1,3 @@
+flask
+iter-tools
+pyodbc
